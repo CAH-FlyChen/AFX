@@ -3,7 +3,6 @@ using System;
 using AFX.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFX.Migrations
@@ -15,15 +14,12 @@ namespace AFX.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
 
             modelBuilder.Entity("Abp.Application.Editions.Edition", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -55,8 +51,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Application.Features.FeatureSetting", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -85,8 +80,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Auditing.AuditLog", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -138,8 +132,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.PermissionSetting", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -168,8 +161,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Roles.RoleClaim", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType")
                         .HasMaxLength(256);
@@ -196,8 +188,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserAccount", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -245,8 +236,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserClaim", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType")
                         .HasMaxLength(256);
@@ -273,8 +263,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserLogin", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("LoginProvider")
                         .IsRequired()
@@ -302,8 +291,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserLoginAttempt", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -340,8 +328,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserOrganizationUnit", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -367,8 +354,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserRole", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -394,8 +380,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Authorization.Users.UserToken", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("ExpireDate");
 
@@ -424,8 +409,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.BackgroundJobs.BackgroundJobInfo", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -435,6 +419,7 @@ namespace AFX.Migrations
 
                     b.Property<string>("JobArgs")
                         .IsRequired()
+                        .HasColumnType("text")
                         .HasMaxLength(1048576);
 
                     b.Property<string>("JobType")
@@ -459,8 +444,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Configuration.Setting", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -493,8 +477,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.EntityHistory.EntityChange", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("ChangeTime");
 
@@ -522,8 +505,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.EntityHistory.EntityChangeSet", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("BrowserInfo")
                         .HasMaxLength(512);
@@ -563,8 +545,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.EntityHistory.EntityPropertyChange", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<long>("EntityChangeId");
 
@@ -592,8 +573,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Localization.ApplicationLanguage", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -634,8 +614,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Localization.ApplicationLanguageText", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -661,6 +640,7 @@ namespace AFX.Migrations
 
                     b.Property<string>("Value")
                         .IsRequired()
+                        .HasColumnType("text")
                         .HasMaxLength(67108864);
 
                     b.HasKey("Id");
@@ -672,14 +652,16 @@ namespace AFX.Migrations
 
             modelBuilder.Entity("Abp.Notifications.NotificationInfo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasConversion(new ValueConverter<byte[], byte[]>(v => default(byte[]), v => default(byte[]), new ConverterMappingHints(size: 16)));
 
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<long?>("CreatorUserId");
 
                     b.Property<string>("Data")
+                    .HasColumnType("text")
                         .HasMaxLength(1048576);
 
                     b.Property<string>("DataTypeName")
@@ -695,6 +677,7 @@ namespace AFX.Migrations
                         .HasMaxLength(250);
 
                     b.Property<string>("ExcludedUserIds")
+                    .HasColumnType("text")
                         .HasMaxLength(131072);
 
                     b.Property<string>("NotificationName")
@@ -704,9 +687,11 @@ namespace AFX.Migrations
                     b.Property<byte>("Severity");
 
                     b.Property<string>("TenantIds")
+                    .HasColumnType("text")
                         .HasMaxLength(131072);
 
                     b.Property<string>("UserIds")
+                    .HasColumnType("text")
                         .HasMaxLength(131072);
 
                     b.HasKey("Id");
@@ -716,8 +701,9 @@ namespace AFX.Migrations
 
             modelBuilder.Entity("Abp.Notifications.NotificationSubscriptionInfo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasConversion(new ValueConverter<byte[], byte[]>(v => default(byte[]), v => default(byte[]), new ConverterMappingHints(size: 16)));
 
                     b.Property<DateTime>("CreationTime");
 
@@ -750,14 +736,16 @@ namespace AFX.Migrations
 
             modelBuilder.Entity("Abp.Notifications.TenantNotificationInfo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasConversion(new ValueConverter<byte[], byte[]>(v => default(byte[]), v => default(byte[]), new ConverterMappingHints(size: 16)));
 
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<long?>("CreatorUserId");
 
                     b.Property<string>("Data")
+                    .HasColumnType("text")
                         .HasMaxLength(1048576);
 
                     b.Property<string>("DataTypeName")
@@ -789,8 +777,9 @@ namespace AFX.Migrations
 
             modelBuilder.Entity("Abp.Notifications.UserNotificationInfo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasConversion(new ValueConverter<byte[], byte[]>(v => default(byte[]), v => default(byte[]), new ConverterMappingHints(size: 16)));
 
                     b.Property<DateTime>("CreationTime");
 
@@ -798,7 +787,9 @@ namespace AFX.Migrations
 
                     b.Property<int?>("TenantId");
 
-                    b.Property<Guid>("TenantNotificationId");
+                    b.Property<byte[]>("TenantNotificationId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<byte[], byte[]>(v => default(byte[]), v => default(byte[]), new ConverterMappingHints(size: 16)));
 
                     b.Property<long>("UserId");
 
@@ -812,8 +803,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("Abp.Organizations.OrganizationUnit", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -853,8 +843,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("AFX.Authorization.Roles.Role", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -911,8 +900,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("AFX.Authorization.Users.User", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("AccessFailedCount");
 
@@ -1011,8 +999,7 @@ namespace AFX.Migrations
             modelBuilder.Entity("AFX.MultiTenancy.Tenant", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ConnectionString")
                         .HasMaxLength(1024);
