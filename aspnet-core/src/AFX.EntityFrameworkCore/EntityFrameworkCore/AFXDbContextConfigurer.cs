@@ -7,12 +7,12 @@ namespace AFX.EntityFrameworkCore
     {
         public static void Configure(DbContextOptionsBuilder<AFXDbContext> builder, string connectionString)
         {
-            builder.UseMySQL(connectionString);
+            builder.UseMySql(connectionString);
         }
 
         public static void Configure(DbContextOptionsBuilder<AFXDbContext> builder, DbConnection connection)
         {
-            builder.UseMySQL(connection);
+            builder.UseMySql(connection);
         }
     }
 }
